@@ -1,0 +1,24 @@
+n=int(input())
+a=list(map(int,input().split()))
+b=list(map(int,input().split()))
+a.sort()
+b.sort()
+p=a[n-1]
+q=b[n-1]
+a=a[:n-1]
+b=b[:n-1]
+a1=a[0]
+b1=b[0]
+count1=0
+count2=0
+i=1
+for i in range(n-1):
+    x1=a[i]-a1
+    x2=b[i]-b1 
+    count1+=x1 
+    count2+=x2 
+    i+=1 
+count=count2+count1 
+print(count1)
+print(count2)
+print(count)
