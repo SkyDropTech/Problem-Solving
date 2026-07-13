@@ -1,26 +1,31 @@
-t = int(input())
+t=int(input())
 res=""
 for _ in range(t):
-    n = int(input())
-    a = list(map(int,input().split()))
-    a.sort()
+    n=int(input())
+    w=list(map(int,input().split()))
+    i=0 
+    j=n-1 
+    freq={}
+    while i<j:
+        suum=w[i]+w[j]
+        if suum not in freq:
+            freq[suum]=1 
+        else:
+            freq[suum]+=1 
+        i+=1 
+        j-=1 
     ans=0
-    for s in range(2,101):
-        i=0 
-        j=n-1 
-        count=0
-        while i<j:
-            total=a[i]+a[j]
-            if total==s:
-                count+=1 
-                i+=1 
-                j-=1 
-            elif total<s:
-                i+=1 
-            else:
-                j-=1 
-        if count>ans:
-            ans=count 
-    print(ans)
+    for j in freq:
+        if freq[j]>ans:
+            ans=freq[j] 
+    res+=str(ans)+"\n"
+print(res)
+
+
+
+
+
+
+
 
 
