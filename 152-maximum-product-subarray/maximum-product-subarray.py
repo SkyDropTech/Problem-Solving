@@ -1,9 +1,8 @@
 class Solution:
     def maxProduct(self, nums: List[int]) -> int:
-        maxi=nums[0] 
-        mini=nums[0] 
+        maxi=mini=1
         ans=nums[0] 
-        for i in range(1,len(nums)):
+        for i in range(len(nums)):
             if nums[i]<0:
                 maxi,mini=mini,maxi 
 
