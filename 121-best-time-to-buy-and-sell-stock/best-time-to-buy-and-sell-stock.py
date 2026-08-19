@@ -1,15 +1,10 @@
 class Solution:
-    def maxProfit(self, arr: List[int]) -> int:
-        n=len(arr)
-        i=0 
-        j=1
-        max_val=0
-        while j<n:
-            if arr[j]<arr[i]:
-                i=j 
-            else:
-                ans=arr[j]-arr[i]
-                max_val=max(max_val,ans)
-            j+=1 
-        return max_val
-        
+    def maxProfit(self, nums: List[int]) -> int:
+        n=len(nums) 
+        ans=0
+        mn=nums[0] 
+        for i in range(n):
+            if nums[i]>mn:
+                ans=max(ans,nums[i]-mn) 
+            mn=min(mn,nums[i])
+        return ans
