@@ -1,10 +1,8 @@
 class Solution:
-    def topKFrequent(self, nums: List[int], k: int) -> List[int]:
+    def topKFrequent(self, nums: list[int], k: int) -> list[int]:
         freq={} 
         for i in nums:
             freq[i]=freq.get(i,0)+1 
-        ans=sorted(freq.items(), key=lambda x:x[1],reverse=True) 
-        arr=[] 
-        for x,y in ans:
-            arr.append(x) 
-        return arr[:k]
+        elements = list(freq.keys())
+        elements.sort(key=lambda x: freq[x], reverse=True)
+        return elements[:k]
