@@ -1,9 +1,11 @@
 class Solution:
-    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
-        mp={} 
-        for x in strs:
-            keys=("".join(sorted(x)))
-            if keys not in mp:
-                mp[keys]=[] 
-            mp[keys].append(x)
-        return list(mp.values())
+    def groupAnagrams(self, strs: list[str]) -> list[list[str]]:
+        n=len(strs)
+        arr=[0]*n
+        freq={}
+        for i in range(len(strs)):
+            arr[i]="".join(sorted(strs[i]))
+            if arr[i] not in freq:
+                freq[arr[i]]=[]
+            freq[arr[i]].append(strs[i])
+        return list(freq.values())
