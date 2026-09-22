@@ -1,14 +1,17 @@
 class Solution:
     def productExceptSelf(self, nums: List[int]) -> List[int]:
         n=len(nums)
+        ct=nums.count(0)
         arr=[0]*n
-        ct=nums.count(0) 
+        if n==1:
+            return num[0]
+        
         if ct>1:
-            return arr 
-        pr=1 
-        for num in nums:
-            if num!=0:
-                pr*=num 
+            return arr
+        pr=1
+        for i in nums:
+            if i!=0:
+                pr*=i
         if ct==1:
             for i in range(n):
                 if nums[i]==0:
@@ -17,8 +20,4 @@ class Solution:
         for i in range(n):
             arr[i]=pr//nums[i] 
         return arr
-
-
-
-
 

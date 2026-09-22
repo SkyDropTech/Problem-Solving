@@ -1,7 +1,10 @@
 class Solution:
-    def missingNumber(self, nums: List[int]) -> int:
-        maxi=max(nums) 
-        for i in range(0,maxi+2):
-            if i not in nums:
+    def missingNumber(self, nums: list[int]) -> int:
+        n=len(nums)
+        nums.sort()
+        for i,e in enumerate(nums):
+            if i!=e:
                 return i 
-                break 
+            if e==len(nums)-1:
+                return e+1
+

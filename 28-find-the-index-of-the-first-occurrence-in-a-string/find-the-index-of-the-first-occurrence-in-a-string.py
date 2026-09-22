@@ -1,9 +1,10 @@
 class Solution:
     def strStr(self, haystack: str, needle: str) -> int:
-        k=len(needle)
-        if needle in haystack :
-            for i in range(len(haystack)-k+1):
-                if haystack[i:i+k]==needle:
-                    return i 
-                    break 
+        n=len(haystack) 
+        m=len(needle) 
+        for i in range(n-m+1):
+            res=haystack[i:i+m] 
+            if res==needle:
+                return i
+                break 
         return -1
