@@ -1,12 +1,11 @@
 class Solution:
-    def rotate(self, nums: List[int], k: int) -> None:
+    def rotate(self, nums: list[int], k: int) -> None:
         n=len(nums)
-        arr=[] 
         k=k%n 
-        n=len(nums)
-        arr=nums[n-k:]
-        for i in range(n-k):
-            arr.append(nums[i])
-        nums[:]=arr
+
+        nums.reverse()
+
+        nums[:k]=nums[:k][::-1] 
+        nums[k:]=nums[k:][::-1] 
+
         return nums
-        
