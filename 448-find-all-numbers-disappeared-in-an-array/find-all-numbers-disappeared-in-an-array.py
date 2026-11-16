@@ -1,10 +1,10 @@
 class Solution:
-    def findDisappearedNumbers(self, nums: List[int]) -> List[int]:
+    def findDisappearedNumbers(self, nums: list[int]) -> list[int]:
         n=len(nums)
-        nums1=set(nums)
-        res=[]
+        lst=[]
+        s=set(nums)
         for i in range(1,n+1):
-            if i not in nums1:
-                res.append(i)
-        return res
-
+            if i not in s:
+                lst.append(i) 
+        return lst
+                
