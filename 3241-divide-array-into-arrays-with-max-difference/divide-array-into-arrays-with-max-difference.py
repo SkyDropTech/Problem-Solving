@@ -3,13 +3,13 @@ class Solution:
         nums.sort()
         n=len(nums)
         lst=[]
-        ct=0
-        for i in range(0,n-2,3):
-            if abs(nums[i]-nums[i+1])<=k and abs(nums[i+1]-nums[i+2])<=k and abs(nums[i]-nums[i+2])<=k:
-                lst.append([nums[i],nums[i+1],nums[i+2]])
-                ct+=3
-        if ct==n:
-            return lst 
-        return [] 
-
+        for i in range(0,n,3):
+            first=nums[i] 
+            second=nums[i+1] 
+            third=nums[i+2] 
+            if third-first>k:
+                return [] 
+            lst.append([first,second,third])
+        return lst
+            
         
